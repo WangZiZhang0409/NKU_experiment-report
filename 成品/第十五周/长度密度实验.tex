@@ -1,0 +1,386 @@
+\documentclass[12pt,a4paper,UTF8]{ctexart}
+
+
+
+
+%设置页边距
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\usepackage{wrapfig}
+
+
+
+%需要用到的扩展包
+\usepackage{xeCJK,amsmath,paralist,enumerate,booktabs,multirow,graphicx,float,subfig,setspace,listings,lastpage,hyperref}
+\usepackage{fancyhdr}
+
+
+
+%设置页眉页脚以及页码
+\pagestyle{fancy}
+\rhead{长度密度实验}
+\lhead{大学基础物理实验报告}
+\cfoot{Page\thepage/\pageref{LastPage}}
+\rfoot{\today}
+
+
+
+
+%报告中用到的图片存放在这个tex文件所在目录中的figures子目录中
+\graphicspath{{figures/}}
+
+
+
+
+
+
+
+
+
+%报告开始
+\begin{document}
+	
+	
+	
+	
+	%设置课程标题
+	\begin{center}
+		\heiti\LARGE{《大学基础物理实验》课程实验报告}
+	\end{center}
+	
+	
+	
+	
+	%设置实验人信息以及实验时间表格
+	
+	
+	\begin{center}
+		\begin{tabular}{lcr}
+			
+			{\songti 姓名及学号:2211082蒋丰毅}  \quad 专业：工科试验班 \quad 年级:22级 \quad 座号:10\\
+			{\songti  学院：软件学院 \quad 实验组别:C组\quad 实验时间:2023年5月26日~星期五~上午}\\
+			
+			
+		\end{tabular}
+	\end{center}
+	\vspace{-0.2cm}
+	{\noindent}	 \rule[-10pt]{16cm}{0.05em}\\
+	
+	\vspace{-0.4cm}
+	
+	
+	
+	
+	
+	
+	%实验题目
+	\begin{center}
+		\LARGE\textbf{长度密度实验}
+	\end{center}
+	
+	
+	\subsection*{[实验目的]}
+\par 1.了解米尺，游标卡尺，螺旋测微器的测量原理和使用方法。
+\par 2.熟悉仪器的读数规则及有效数字运算法则
+\par 3.掌握直接测量、间接测量的数据处理方法及不确定度的计算
+\par 4.了解测定密度的基本方法
+\par 5.掌握物理天平和电子天平的结构原理，操作规程，使用及维护方法。
+\par 6.掌握用静力称衡法测定不规则固体及液体密度的原理和方法。
+\par 7.熟悉测量不确定度的估计方法。
+\subsection*{[实验器材]}
+\par 米尺，游标卡尺，螺旋测微器，钢球，空心柱体，牛角扣，电子天平，铁架台，玻璃烧杯，细线，温度计等
+\subsection*{[实验原理]}
+\par 1.\textbf{读数问题}
+\[
+	\text{50分度游标卡尺：}12.81cm\to 12.810cm \quad 
+	\text{螺旋测微器：}7.564cm  \to 7.5642cm\\
+\]
+\par 2.\textbf{米尺} 量程0-1000.0mm，分度值1.0mm 估读到0.00cm；
+\par 3.\textbf{游标卡尺}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics*[width=0.7\textwidth]{游标卡尺.png}
+\end{figure}
+游标卡尺 50格的仪器，一格是0.98mm 估读到00.00mm；游标卡尺是在米尺上附加一个刻度均匀且可以滑动的游标，从而巧妙地提高米尺的测量精度。游标卡尺的结构如图所示，量爪A、C与主尺L相连，B、D及深度尺G与副尺S相连；M为紧固螺钉，N为推把。A、B组成内测量爪，可测内径及槽宽；C、D组成外测量爪，可测长度、厚度及外径；G可测深度及台高。当卡口合拢时，主、副尺“0”刻度线重合，深度尺端面与主尺端面重合。主尺的长度决定了游标卡尺的量程，副尺的刻度决定了游标卡尺的分度值。
+\par 游标卡尺的主尺上$n-1$个分度所对应的长度为$(n-1)mm$；副尺上$n$个分度所对应的长度也是$(n-1)mm$，如下图所示，因此主尺与刚尺每个分度简之差即格差为
+\[
+\varepsilon_{x}=(1-{\frac{n-1}{n}})m m={\frac{1}{n}}m m
+\]
+\par $\varepsilon_{x}$就是游标卡尺的最小分划单位即分度值。由于$\varepsilon_{x}$可由格差精确地给出，所以卡尺的测量精度明显优于米尺，我们所使用的50分度游标卡尺所对应的分度值分别为$0.02mm$。
+游标卡尺的读数方法是：游标卡尺的读数由主尺读数和副尺读数两部分组成，主尺上读出毫米位的准确数，毫米以下的尾数由副尺读出。若副尺上第m个刻线与主尺上某刻线$(k+m)$重合，因格差为$\varepsilon_{x}$，故可断定副尺零刻线与主尺上第$k$个刻度线相距$m\varepsilon_{x}$。于是可得待测长度为
+\[
+	x=k\;m m+m\varepsilon_{x}
+\]
+\par 用游标卡尺的不同测量爪分别测量半空心圆柱体的外径$D_1$、内径$D_2$、高度$H_1$及深度$H_2$,再利用公式
+\[
+	V={\frac{\pi}{4}}(D_{1}^{2}H_{1}-D_{2}^{2}H_{2})
+\]
+可以求出半空心圆柱体的体积。
+\par 4.\textbf{螺旋测微器}
+\par 量程为25mm，分度值为0.01mm，估读到0.000mm；螺旋测微器是利用螺旋进退来测量长度的仪器，它比游标卡尺更精密，常用于测量小球的直径、金属丝的直径和薄板的厚度。实验室中常用的螺旋测微器量程为25mm，分度值为0.01mm，极限误差为0.004mm。
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics*[width=0.5\textwidth]{螺旋测微器.png}
+\end{figure}
+\par 测微螺杆和微分筒（副尺）、棘轮相连，并以螺纹与固定套管（主尺）连接。轻转棘轮，则棘轮靠一定的摩擦力带动副尺一起转动;当微分筒相对于固定套管转过一周时，测微螺杆前进或者后退一个螺距。主尺分度为$0.5mm$，螺纹的螺距为$0.5mm$，因此副尺旋转一周，即在主尺上移动一格，即顶砧A与测微螺杆B端面的间距改变$0.5mm$。副尺套筒上均分$50$个小格，因此，每旋转1小格测杆B移动$0.5/50mm=0.01mm$。可见，螺旋测微器的设计特点就是采用了这种机械放大原理。读数时，要读出主尺上的读数还有微分筒上的读数，注意不要丢掉主尺上可能露出的“半整数”，副尺读数时应包括一位小数。此外，使用螺旋测微器测量物体之前，应先记录零点读数$x_0$。这是因为当转动棘轮使测微螺杆与顶砧刚接触时，微分筒的端面的读数应为$0.000mm$，否则就应该记录初始读数，也就是零点读数，以便对测量值进行修正，测量结果应是:测量值=读数值-零点读数。读零点读数时应注意微分筒上的零刻度线在主尺横线的上方还是下方，对应零点读数分别为正值还是负值。测量得到小刚球的直径$D$后根据以下公式计算体积
+\[
+	V_{\text{球}}=\frac{4}{3}{\pi}(\frac{D}{2})^{3}=\frac{{\pi}D^{3}}{6}
+\]
+\par 5.\textbf{流体静力称衡法}
+\par 若物体质量为$m$,体积为$V$，则其密度为
+\[
+	\rho = \frac{m}{V}
+\]
+\par 由阿基米德原理：物体在液体中所受的浮力等于它排开液体的重量。若以$\rho_0$表示液体的密度，$V$表示排开液体的体积亦即待测物体的体积。进行受力分析如下
+\begin{figure}[!htbp]
+	\centering
+	\begin{minipage}[t]{0.4\textwidth}
+		\centering
+		\includegraphics[width=3.5cm]{牛角扣受力分析.png}
+		\caption{牛角扣受力分析}
+	\end{minipage}
+	\begin{minipage}[t]{0.4\textwidth}
+		\centering
+		\includegraphics[width=3.5cm]{水和烧杯受力分析.png}
+		\caption{整体受力分析}
+	\end{minipage}
+\end{figure}
+\par 由图可知，牛角扣受力分析方程如下：
+\begin{align*}
+    \left\{
+        \begin{aligned}
+            T_{\text{拉}}+F_{\text{浮}}&=mg\\
+            T_{\text{拉}}+F_{N}&=G_{\text{总}}
+        \end{aligned}
+    \right.
+\end{align*}
+\par 其中$G_{\text{总}}$为表格中的$(m_0+m)g$,$F_N$为表格中的$m_1g$，两式消去$T_{\text{拉}}$后得到
+\[
+	F_{\text{浮}} = (m_1-m_0)g
+\]
+\par 由阿基米德原理:
+\[
+	F_{\text{浮}} = \rho_0 V g
+\]
+\par 查表得到$\rho$，由此解出$V$，带入密度表达式，解出
+\[
+	\rho = \frac{m \rho_o}{m_1-m_0}
+\]
+\subsection*{[实验内容]}
+\par 1.用钢卷尺测量教科书宽度分别在同一位置同一起点，同一位置不同起点，不同位置同一起点，不同位置不同起点各测量四次记录数据。
+\par 2.用游标卡尺测量柱体的内径，外径，高，深，分别测量四次记录数据并计算体积。
+\par 3.用游标卡尺测量小钢球的直径6次并记录数据并计算体积。
+\par 4.用流体静力称衡法测量牛角扣的密度
+\par (1)电子天平称量牛角扣的质量$(m)$一次
+\par (2)电子天平称量装满水的烧杯质量$(m_0)$，记录，将系有绳子的牛角扣完全浸没在水中，记录电子天平视重$(m_1)$
+\par (3)将牛角扣拿出并擦干，将烧杯中的水倒出一点，记录此时装水烧杯的质量。再次将牛角扣放入烧杯，记录电子天平视重。
+\par (4)再次将牛角扣拿出并擦干，将烧杯中的水倒出一点，记录此时装水烧杯的质量，再次将牛角扣放入烧杯，记录电子天平视重。
+\par (5)得到三组浸入牛角扣前后的视重数据。
+\subsection*{[数据处理]}
+\subsubsection*{教科书的宽度}
+
+\begin{table}[!htbp]
+	\centering
+	\caption{教科书长度测量值记录表(单位:cm)}
+	\begin{tabular}{ccccccccc}
+		\toprule
+		\makebox[0.08\textwidth][c]{次数}&\makebox[0.08\textwidth][c]{$l_1$}&\makebox[0.08\textwidth][c]{$l_2$}&\makebox[0.08\textwidth][c]{$l_3$起}&\makebox[0.08\textwidth][c]{$l_3$末}&\makebox[0.08\textwidth][c]{$l_3$}&\makebox[0.08\textwidth][c]{$l_4$起}&\makebox[0.08\textwidth][c]{$l_4$末}&\makebox[0.08\textwidth][c]{$l_4$}\\
+		\midrule
+		1 & 18.50 & 18.50  	& 6.00 	& 24.48 & 18.48 & 7.00 	& 25.60 & 18.60\\
+		2 & 18.50 & 18.50 	& 4.50 	& 23.00 & 18.50 & 10.00 & 28.50 & 18.50\\
+		3 & 18.50 & 18.45   & 9.00 	& 27.50 & 18.50 & 9.00 	& 27.40 & 18.40\\
+		4 & 18.50 & 18.60   & 10.00 & 28.45 & 18.45 & 11.00 & 29.45 & 18.45\\	
+		\bottomrule
+	\end{tabular}
+	\end{table}
+\clearpage
+\subsubsection*{$l_1$计算}
+\begin{align*}
+        \begin{aligned}
+        \overline{l_1}&=\frac{\sum_{1}^{4}l_{1_i}}{4}=18.50cm\\
+        s_{l_{1}}&=\sqrt{\frac{4(\overline{l_1^2}-\overline{l_1}^2)}{4-1}}=0\\
+		s_{\overline{l_{1}}} &= \frac{s_{l_{1}}}{\sqrt{4}} = 0\\
+		\mu_{Al_1} &= t_{(0.683,3)}s_{\overline{l_1}} = 0\\
+		\mu_{Bl_1} &= \frac{\varepsilon_{l_1}}{\sqrt{3}} = 0.0577cm \approx 0.058cm\\
+		\mu_{l_1} &= \sqrt{\mu_{Al_1}^2+\mu_{Bl_1}^2}=0.058cm\approx 0.05\\
+		\text{故}l_1 &= (18.50 \pm 0.05)cm \\
+        \end{aligned}
+\end{align*}
+\subsubsection*{$l_2$计算}
+\begin{align*}
+        \begin{aligned}
+        \overline{l_2}&=\frac{\sum_{1}^{4}l_{2_i}}{4}=18.5125\approx 18.51cm\\
+        s_{l_{2}}&=\sqrt{\frac{4(\overline{l_2^2}-\overline{l_2}^2)}{4-1}}=0.0629cm\approx 0.063cm\\
+		s_{\overline{l_{2}}} &= \frac{s_{l_{2}}}{\sqrt{4}} = 0.0315cm\approx 0.032cm\\
+		\mu_{Al_2} &= t_{(0.683,3)}s_{\overline{l_2}} = 0.0377cm\approx0.038cm\\
+		\mu_{Bl_2} &= \frac{\varepsilon_{l_2}}{\sqrt{3}} = 0.0577cm \approx 0.058cm\\
+		\mu_{l_2} &= \sqrt{\mu_{Al_2}^2+\mu_{Bl_2}^2}=0.069cm\approx 0.07cm\\
+		\text{故}l_2 &= (18.50 \pm 0.07)cm \\
+        \end{aligned}
+\end{align*}
+\subsubsection*{$l_3$计算}
+\begin{align*}
+	\begin{aligned}
+	\overline{l_3}&=\frac{\sum_{1}^{4}l_{3_i}}{4}=18.4825\approx 18.48cm\\
+	s_{l_{3}}&=\sqrt{\frac{4(\overline{l_3^2}-\overline{l_3}^2)}{4-1}}=0.0236cm\approx 0.024cm\\
+	s_{\overline{l_{3}}} &= \frac{s_{l_{3}}}{\sqrt{4}} = 0.0118cm\approx 0.012cm\\
+	\mu_{Al_3} &= t_{(0.683,3)}s_{\overline{l_3}} = 0.0142cm\approx0.014cm\\
+	\mu_{Bl_3} &= \frac{\varepsilon_{l_3}}{\sqrt{3}} = 0.0577cm \approx 0.058cm\\
+	\mu_{l_3} &= \sqrt{\mu_{Al_3}^2+\mu_{Bl_3}^2}=0.0595cm\approx 0.06cm\\
+	\text{故}l_3 &= (18.48 \pm 0.06)cm \\
+	\end{aligned}
+\end{align*}
+\subsubsection*{$l_4$计算}
+\begin{align*}
+	\begin{aligned}
+	\overline{l_4}&=\frac{\sum_{1}^{4}l_{4_i}}{4}=18.4875\approx 18.49cm\\
+	s_{l_{4}}&=\sqrt{\frac{4(\overline{l_4^2}-\overline{l_4}^2)}{4-1}}=0.0854cm\approx 0.085cm\\
+	s_{\overline{l_{4}}} &= \frac{s_{l_{4}}}{\sqrt{4}} = 0.0427cm\approx 0.043cm\\
+	\mu_{Al_4} &= t_{(0.683,3)}s_{\overline{l_3}} = 0.0512cm\approx0.051cm\\
+	\mu_{Bl_4} &= \frac{\varepsilon_{l_4}}{\sqrt{3}} = 0.0577cm \approx 0.058cm\\
+	\mu_{l_4} &= \sqrt{\mu_{Al_4}^2+\mu_{Bl_4}^2}=0.0772cm\approx 0.08cm\\
+	\text{故}l_3 &= (18.48 \pm 0.08)cm \\
+	\end{aligned}
+\end{align*}
+\subsubsection*{半空心圆柱几何尺寸}
+\begin{table}[!htbp]
+	\centering
+	\caption{半空心圆柱测量值记录表(单位:cm)}
+	\begin{tabular}{ccccc}
+		\toprule
+		\makebox[0.1\textwidth][c]{次数}&\makebox[0.1\textwidth][c]{$D_{1_i}$}&\makebox[0.1\textwidth][c]{$H_{1_i}$}&\makebox[0.1\textwidth][c]{$D_{2_i}$}&\makebox[0.1\textwidth][c]{$H_{2_i}$}\\
+		\midrule
+		1 & 3.000 & 3.000  	& 1.800	& 2.168\\
+		2 & 2.998 & 3.000 	& 1.802	& 2.170\\
+		3 & 3.000 & 2.998   & 1.770	& 2.174\\
+		4 & 3.000 & 2.998   & 1.800 & 2.168\\	
+		\bottomrule
+	\end{tabular}
+\end{table}
+\subsubsection*{$D_1$的计算}
+\begin{align*}
+	\begin{aligned}
+	\overline{D_1}&=\frac{\sum_{1}^{4}D_{1_i}}{4}=2.9995cm\\
+	s_{D_{1}}&=\sqrt{\frac{4(\overline{D_1^2}-\overline{D_1}^2)}{4-1}}=0.001cm\\
+	s_{\overline{D_1}} &= \frac{s_{D_{1}}}{\sqrt{4}} = 0.0005cm\\
+	\mu_{AD_1} &= t_{(0.683,3)}s_{\overline{D_1}} = 0.0006cm\\
+	\mu_{BD_1} &= \frac{\varepsilon_{D_1}}{\sqrt{3}} = 0.001154cm\approx 0.0012cm\\
+	\mu_{D_1} &= \sqrt{\mu_{AD_1}^2+\mu_{BD_1}^2}=0.00130128cm\approx 0.0013cm\\
+	\text{故}D_1 &= (2.9995 \pm 0.0013)cm \\
+	\end{aligned}
+\end{align*}
+\subsubsection*{$H_1$的计算}
+\begin{align*}
+	\begin{aligned}
+	\overline{H_1}&=\frac{\sum_{1}^{4}H_{1_i}}{4}=2.9990cm\\
+	s_{H_{1}}&=\sqrt{\frac{4(\overline{H_1^2}-\overline{H_1}^2)}{4-1}}=0.001154cm\approx 0.0012cm\\
+	s_{\overline{H_1}} &= \frac{s_{H_{1}}}{\sqrt{4}} = 0.0005773cm\approx 0.00058cm\\
+	\mu_{AH_1} &= t_{(0.683,3)}s_{\overline{H_1}} = 0.000692cm\approx0.00069cm\\
+	\mu_{BH_1} &= \frac{\varepsilon_{H_1}}{\sqrt{3}} = 0.001154cm\approx 0.0012cm\\
+	\mu_{H_1} &= \sqrt{\mu_{AH_1}^2+\mu_{BH_1}^2}=0.00134660cm\approx 0.0013cm\\
+	\text{故}H_1 &= (2.9990 \pm 0.0013)cm \\
+	\end{aligned}
+\end{align*}
+\subsubsection*{$D_2$的计算}
+\begin{align*}
+	\begin{aligned}
+	\overline{D_2}&=\frac{\sum_{1}^{4}D_{2_i}}{4}=1.793cm\\
+	s_{D_{2}}&=\sqrt{\frac{4(\overline{D_2^2}-\overline{D_2}^2)}{4-1}}=0.01536cm\approx 0.0154cm\\
+	s_{\overline{D_2}} &= \frac{s_{D_{2}}}{\sqrt{4}} = 0.0076811cm\approx 0.0077cm\\
+	\mu_{AD_2} &= t_{(0.683,3)}s_{\overline{D_2}} = 0.0092173cm\approx 0.0092cm\\
+	\mu_{BD_2} &= \frac{\varepsilon_{D_2}}{\sqrt{3}} = 0.001154cm\approx 0.0012cm\\
+	\mu_{D_2} &= \sqrt{\mu_{AD_2}^2+\mu_{BD_2}^2}=0.0092173cm\approx 0.009cm\\
+	\text{故}D_2 &= (1.793 \pm 0.009)cm \\
+	\end{aligned}
+\end{align*}
+\subsubsection*{$H_2$的计算}
+\begin{align*}
+	\begin{aligned}
+	\overline{H_2}&=\frac{\sum_{1}^{4}H_{2_i}}{4}=2.170cm\\
+	s_{H_{2}}&=\sqrt{\frac{4(\overline{H_2^2}-\overline{H_2}^2)}{4-1}}=0.002828cm\approx 0.0029cm\\
+	s_{\overline{H_2}} &= \frac{s_{H_{2}}}{\sqrt{4}} = 0.0014142cm\approx 0.0014cm\\
+	\mu_{AH_2} &= t_{(0.683,3)}s_{\overline{H_2}} = 0.001697cm\approx0.0017cm\\
+	\mu_{BH_2} &= \frac{\varepsilon_{H_1}}{\sqrt{3}} = 0.001154cm\approx 0.0012cm\\
+	\mu_{H_2} &= \sqrt{\mu_{AH_2}^2+\mu_{BH_2}^2}=0.002052cm\approx 0.002cm\\
+	\text{故}H_2 &= (2.170 \pm 0.002)cm \\
+	\end{aligned}
+\end{align*}
+\subsubsection*{体积的测量}
+利用间接测量法测量体积：
+\begin{align*}
+	\begin{aligned}
+		\overline{V}&=\frac{\pi}{4}(D_{1}^{2}H_{1}-D_{2}^{2}H_{2}) = 15.7125cm^3\\
+		u_{V}&=\frac{\pi}{4}\sqrt{(2D_{1}H_{1}u_{D_{1}})^{2}+(D_{1}^{2}u_{H_{1}})^{2}+(2D_{2}H_{2}u_{D_{2}})^{2}+(D_{2}^{2}u_{H_{2}})^{2}}\\
+		&=0.060625829cm^3\approx 0.06cm^3\\
+		\text{故}V &= (15.71 \pm 0.06)cm^3
+	\end{aligned}
+\end{align*}
+\subsubsection*{钢球直径}
+\begin{table}[!htbp]
+	\centering
+	\caption{钢球直径测量值记录表(单位:mm)}
+	\begin{tabular}{ccccc}
+		\toprule
+		\makebox[0.1\textwidth][c]{方向}&\makebox[0.1\textwidth][c]{$D_{1_i}$}&\makebox[0.1\textwidth][c]{$D_{2_i}$}\\
+		\midrule
+		1 & 2.2402 & 2.2400 	\\
+		2 & 2.2408 & 2.2408	\\
+		3 & 2.2410 & 2.2408 	\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\vspace*{-0.75cm}
+\begin{center}
+	零点读数:$-0.020mm$
+\end{center}
+\subsubsection*{$D$不确定度的计算}
+\begin{align*}
+	\begin{aligned}
+	\overline{D}&=\frac{\sum_{1}^{6}(D_i+0.02)}{6}=22.4259mm\\
+	s_{D}&=\sqrt{\frac{6(\overline{D_2^2}-\overline{D_2}^2)}{4-1}}=0.004mm\\
+	s_{\overline{D}} &= \frac{s_{D}}{\sqrt{6}} = 0.00163299mm\approx 0.00163mm\\
+	\mu_{AD} &= t_{(0.683,5)}s_{\overline{D}} = 0.0018126mm\approx0.001813mm\\
+	\mu_{BD} &= \frac{\varepsilon_{D}}{\sqrt{6}} = 0.000057735cm\approx 0.000058cm\\
+	\mu_{D} &= \sqrt{\mu_{AD}^2+\mu_{BD}^2}=0.00181354cm\approx 0.0018cm\\
+	\end{aligned}
+\end{align*}
+\subsubsection*{体积的计算}
+\begin{align*}
+	\begin{aligned}
+		\overline{V}&=\frac{\pi}{6}D^{3} = 5773.5026mm^3\approx 5773.502mm^3\\
+		u_{V}&=\frac{\pi}{6}\sqrt{(3D^{2}u_{D})^{2}} = 1.4326mm^3\approx 1.4mm^3\\
+		\text{故}V &= (5773.5 \pm 1.4)mm^3 = (5.77735 \pm 0.0015)cm^3
+	\end{aligned}
+\end{align*}
+\subsubsection*{牛角扣密度}
+\begin{table}[!htbp]
+	\centering
+	\caption{牛角扣密度测量值(单位:g)}
+	\begin{tabular}{ccccc}
+		\toprule
+		\makebox[0.1\textwidth][c]{次数}&\makebox[0.1\textwidth][c]{$m_0$}&\makebox[0.1\textwidth][c]{$m_1$}\\
+		\midrule
+		1 & 378.94 & 382.11 	\\
+		2 & 329.26 & 332.41		\\
+		3 & 286.57 & 289.76 	\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\vspace*{-0.75cm}
+\begin{center}
+	牛角扣质量:$m=3.91g$\quad 水温:$T=24.9^{\circ} C$
+\end{center}
+\par 查表得到$\rho_0 = 0.997096 g/cm^3$ 带入公式
+\[
+	\rho = \frac{m \rho_o}{m_1-m_0}
+\]
+\par 计算得到三组数据的密度分别为
+\begin{align*}
+	\begin{aligned}
+		\rho_1 &= 1.229856 g/cm^3\\
+		\rho_2 &= 1.237665 g/cm^3\\
+		\rho_3 &= 1.222145 g/cm^3\\
+		\text{则平均}\overline{\rho} &= 1.2298 g/cm^3\\
+	\end{aligned}
+\end{align*}
+\end{document}
